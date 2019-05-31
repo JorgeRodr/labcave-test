@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="list">
-      <Header />
+      <Header/>
       <template v-for="movie in movies">
         <MovieCard :movie="movie" v-bind:key="movie.id"/>
       </template>
@@ -40,5 +40,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "h h"
+    ". .";
+  grid-gap: 1%;
+}
 </style>

@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  grid-area: h;
   display: flex;
   justify-content: center;
   padding-top: 20px;
