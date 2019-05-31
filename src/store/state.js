@@ -1,3 +1,5 @@
 export const state = {
-  movies: null
+  movies: null,
+  error: null,
+  loading: false
 };
