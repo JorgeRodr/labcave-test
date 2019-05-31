@@ -2,6 +2,9 @@
   <v-app>
     <div class="list">
       <Header @submitted="log"/>
+      <template v-if="movies && movies.length === 0">
+        <span class="list__warn">No data for this search</span>
+      </template>
       <template v-for="movie in movies">
         <MovieCard :movie="movie" v-bind:key="movie.id"/>
       </template>
@@ -49,7 +52,12 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     "h h h h"
+    ". w w ."
     ". . . .";
   grid-gap: 1%;
+  &__warn {
+    font-size: 24px;
+    grid-area: w;
+  }
 }
 </style>

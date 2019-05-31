@@ -14,12 +14,12 @@ export default {
   data: function() {
     return {
       value: null
-    }
+    };
   },
   methods: {
     onSubmit(e) {
       e.preventDefault();
-      this.$emit('submitted', this.value);
+      this.$emit("submitted", this.value);
     }
   }
 };
@@ -40,7 +40,20 @@ export default {
       outline: none;
       font-size: 26px;
       width: 20%;
+      text-align: center;
     }
+    input:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+    input:focus:-moz-placeholder {
+      color: transparent;
+    } /* FF 4-18 */
+    input:focus::-moz-placeholder {
+      color: transparent;
+    } /* FF 19+ */
+    input:focus:-ms-input-placeholder {
+      color: transparent;
+    } /* IE 10+ */
   }
 }
 </style>
