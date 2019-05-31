@@ -39,8 +39,16 @@ export default {
       height: 10vh;
       outline: none;
       font-size: 26px;
-      width: 20%;
       text-align: center;
+      width: 20%;
+
+      @media screen and (min-width: 650px) and (max-width: 1024px) {
+        width: 50%;
+      }
+      @media screen and (max-width: 650px) {
+        width: 100%;
+        font-size: 20px;
+      }
     }
     input:focus::-webkit-input-placeholder {
       color: transparent;

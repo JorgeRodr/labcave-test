@@ -50,10 +50,28 @@ export default {
 .list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "h h h h"
-    ". w w ."
-    ". . . .";
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "h h h h"
+      ". w w ."
+      ". . . .";
+  }
+  @media screen and (min-width: 650px) and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "h h"
+      "w w"
+      ". .";
+  }
+  @media screen and (max-width: 650px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "h"
+      "w"
+      ".";
+    // grid-gap: 35px;
+  }
   grid-gap: 1%;
   &__warn {
     font-size: 24px;
