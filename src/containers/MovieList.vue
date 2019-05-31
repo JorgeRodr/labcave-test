@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="text-xs-center">
-      <div v-for="(movie, index) in movies" v-bind:key="index">
+      <div v-for="movie in movies" v-bind:key="movie.id">
         <MovieCard :movie="movie"/>
       </div>
     </div>

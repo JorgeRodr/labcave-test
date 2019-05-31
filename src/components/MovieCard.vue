@@ -1,5 +1,11 @@
 <template>
   <div>
+    <template v-if="movie.poster_path">
+      <img v-bind:src="url + movie.poster_path" />
+    </template>
+    <template v-else>
+      <span>Image not available</span>
+    </template>
     <div class="text-xs-center">{{movie.title}}</div>
     <MovieModal :msg="movie.overview"/>
   </div>
@@ -7,10 +13,16 @@
 
 <script>
 import MovieModal from "./MovieModal";
+import { CONSTANTS } from "../constants.js";
 export default {
   name: "MovieCard",
   components: {
     MovieModal
+  },
+  data() {
+    return {
+      url: CONSTANTS.IMG_BASE_URL
+    }
   },
   props: {
     movie: Object

@@ -3,8 +3,10 @@ import gql from "graphql-tag";
 export const QUERY = gql`
   query StarWars {
     movies(query: "The Lord of the Rings") {
-      title
-      overview
+      id,
+      title,
+      overview,
+      poster_path
     }
   }
 `;
