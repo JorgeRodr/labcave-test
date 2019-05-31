@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="list">
-      <Header/>
+      <Header @submitted="log"/>
       <template v-for="movie in movies">
         <MovieCard :movie="movie" v-bind:key="movie.id"/>
       </template>
@@ -20,7 +20,7 @@ export default {
     Header
   },
   created: function() {
-    this.fetchMovies();
+    // this.fetchMovies();
   },
   data() {
     return {
@@ -34,7 +34,10 @@ export default {
     msg: String
   },
   methods: {
-    ...mapActions(["fetchMovies"])
+    ...mapActions(["fetchMovies"]),
+    log: function(e) {
+      this.fetchMovies(e);
+    }
   }
 };
 </script>

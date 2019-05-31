@@ -1,14 +1,27 @@
 <template>
   <div class="header">
     <div class="header__search">
-      <input type="text" placeholder="Search a movie and press enter">
+      <form @submit="onSubmit">
+        <input v-model="value" type="text" placeholder="Search a movie and press enter">
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data: function() {
+    return {
+      value: null
+    }
+  },
+  methods: {
+    onSubmit(e) {
+      e.preventDefault();
+      this.$emit('submitted', this.value);
+    }
+  }
 };
 </script>
 
