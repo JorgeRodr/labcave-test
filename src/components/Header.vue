@@ -25,7 +25,6 @@ export default {
       border: none;
       height: 10vh;
       outline: none;
-      border-bottom: 1px solid black;
       font-size: 26px;
       width: 20%;
     }

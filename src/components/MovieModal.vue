@@ -2,7 +2,7 @@
   <div class="modal">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on }">
-        <v-btn color="red lighten-2" dark v-on="on">Click Me</v-btn>
+        <v-btn color="primary" flat v-on="on">See more</v-btn>
       </template>
 
       <v-card>

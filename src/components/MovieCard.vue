@@ -1,16 +1,18 @@
 <template>
-  <div class="card">
-    <v-card>
+  <v-card>
+    <div class="card">
       <template v-if="movie.poster_path">
         <img class="card__image" v-bind:src="url + movie.poster_path">
       </template>
       <template v-else>
         <span class="card__image-error">Image not available</span>
       </template>
-      <h2 class="card__title">{{movie.title}}</h2>
-      <MovieModal :msg="movie.overview"/>
-    </v-card>
-  </div>
+      <div class="card__info">
+        <h2>{{movie.title}}</h2>
+        <MovieModal class :msg="movie.overview"/>
+      </div>
+    </div>
+  </v-card>
 </template>
 
 <script>
@@ -34,7 +36,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  .card {
-    // grid-area: c;
+.card {
+  display: flex;
+  height: 100%;
+  &__info {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    .modal {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
   }
+
+  &__image-error {
+    height: 100%;
+  }
+}
 </style>
