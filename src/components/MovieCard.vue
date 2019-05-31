@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <template v-if="movie.poster_path">
-      <img v-bind:src="url + movie.poster_path" />
-    </template>
-    <template v-else>
-      <span>Image not available</span>
-    </template>
-    <div class="text-xs-center">{{movie.title}}</div>
-    <MovieModal :msg="movie.overview"/>
+  <div class="card">
+    <v-card>
+      <template v-if="movie.poster_path">
+        <img class="card__image" v-bind:src="url + movie.poster_path">
+      </template>
+      <template v-else>
+        <span class="card__image-error">Image not available</span>
+      </template>
+      <h2 class="card__title">{{movie.title}}</h2>
+      <MovieModal :msg="movie.overview"/>
+    </v-card>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ export default {
   data() {
     return {
       url: CONSTANTS.IMG_BASE_URL
-    }
+    };
   },
   props: {
     movie: Object

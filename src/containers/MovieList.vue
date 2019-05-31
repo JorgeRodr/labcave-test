@@ -1,9 +1,10 @@
 <template>
   <v-app>
-    <div class="text-xs-center">
-      <div v-for="movie in movies" v-bind:key="movie.id">
-        <MovieCard :movie="movie"/>
-      </div>
+    <div class="list">
+      <Header />
+      <template v-for="movie in movies">
+        <MovieCard :movie="movie" v-bind:key="movie.id"/>
+      </template>
     </div>
   </v-app>
 </template>
@@ -11,10 +12,12 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import MovieCard from "../components/MovieCard";
+import Header from "../components/Header";
 export default {
   name: "MovieList",
   components: {
-    MovieCard
+    MovieCard,
+    Header
   },
   created: function() {
     this.fetchMovies();
@@ -38,18 +41,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>

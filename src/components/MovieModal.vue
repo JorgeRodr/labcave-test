@@ -1,5 +1,5 @@
 <template>
-  <div class="text-xs-center">
+  <div class="modal">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on }">
         <v-btn color="red lighten-2" dark v-on="on">Click Me</v-btn>
