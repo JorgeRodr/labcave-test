@@ -1,11 +1,11 @@
 export const mutations = {
-  UPDATE_MOVIES: function(state, payload) {
+  UPDATE_MOVIES(state, payload) {
     state.movies = payload.movies;
   },
-  SET_ERROR: function(state, payload) {
+  SET_ERROR(state, payload) {
     state.error = payload;
   },
-  SET_LOADING: function(state, payload) {
+  SET_LOADING(state, payload) {
     state.loading = payload;
-  }
+  },
 };

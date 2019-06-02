@@ -1,21 +1,21 @@
-import { createLocalVue, mount } from "@vue/test-utils";
-import App from "../../src/App.vue";
-import store from "../../src/store";
-import Vuex from "vuex";
-import Vuetify from "vuetify";
-import Vue from "vue";
+import { createLocalVue, mount } from '@vue/test-utils';
+import Vuex from 'vuex';
+import Vuetify from 'vuetify';
+import Vue from 'vue';
+import store from '../../src/store';
+import App from '../../src/App.vue';
 
-describe("App", () => {
+describe('App', () => {
   const localVue = createLocalVue();
   localVue.use(Vuex);
   Vue.use(Vuetify);
 
   const wrapper = mount(App, {
     localVue,
-    store
+    store,
   });
 
-  test("is a Vue instance", () => {
+  test('is a Vue instance', () => {
     expect(wrapper.isVueInstance()).toBeTruthy();
   });
 });

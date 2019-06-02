@@ -1,26 +1,26 @@
-import { mount } from "@vue/test-utils";
-import MovieModal from "../../../src/components/MovieModal.vue";
-import Vuetify from "vuetify";
-import Vue from "vue";
+import { mount } from '@vue/test-utils';
+import Vuetify from 'vuetify';
+import Vue from 'vue';
+import MovieModal from '../../../src/components/MovieModal.vue';
 
 global.console = {
   ...global.console,
-  warn: jest.fn()
+  warn: jest.fn(),
 };
 
-describe("MovieModal", () => {
+describe('MovieModal', () => {
   const movie = {
-    id: "1",
-    title: "Star Wars",
-    overview: "Test",
-    poster_path: "test.jpg"
+    id: '1',
+    title: 'Star Wars',
+    overview: 'Test',
+    poster_path: 'test.jpg',
   };
   Vue.use(Vuetify);
-  test("is a Vue instance", () => {
+  test('is a Vue instance', () => {
     const wrapper = mount(MovieModal, {
       propsData: {
-        msg: movie.overview
-      }
+        msg: movie.overview,
+      },
     });
     expect(wrapper.isVueInstance()).toBeTruthy();
   });

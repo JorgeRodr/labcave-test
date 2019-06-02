@@ -1,26 +1,26 @@
-import { mount } from "@vue/test-utils";
-import MovieCard from "../../../src/components/MovieCard.vue";
-import Vuetify from "vuetify";
-import Vue from "vue";
+import { mount } from '@vue/test-utils';
+import Vuetify from 'vuetify';
+import Vue from 'vue';
+import MovieCard from '../../../src/components/MovieCard.vue';
 
 global.console = {
   ...global.console,
-  warn: jest.fn()
+  warn: jest.fn(),
 };
 
-describe("MovieCard", () => {
+describe('MovieCard', () => {
   const movie = {
-    id: "1",
-    title: "Star Wars",
-    overview: "Test",
-    poster_path: "test.jpg"
+    id: '1',
+    title: 'Star Wars',
+    overview: 'Test',
+    poster_path: 'test.jpg',
   };
   Vue.use(Vuetify);
-  test("is a Vue instance", () => {
+  test('is a Vue instance', () => {
     const wrapper = mount(MovieCard, {
       propsData: {
-        movie
-      }
+        movie,
+      },
     });
     expect(wrapper.isVueInstance()).toBeTruthy();
   });

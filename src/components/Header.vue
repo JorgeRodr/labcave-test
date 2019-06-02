@@ -10,18 +10,18 @@
 
 <script>
 export default {
-  name: "Header",
-  data: function() {
+  name: 'Header',
+  data() {
     return {
-      value: null
+      value: null,
     };
   },
   methods: {
     onSubmit(e) {
       e.preventDefault();
-      this.$emit("submitted", this.value);
-    }
-  }
+      this.$emit('submitted', this.value);
+    },
+  },
 };
 </script>
 

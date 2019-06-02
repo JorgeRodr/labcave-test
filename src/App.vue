@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import MovieList from './containers/MovieList.vue'
+import MovieList from './containers/MovieList.vue';
 
 export default {
   name: 'app',
   components: {
-    MovieList
-  }
-}
+    MovieList,
+  },
+};
 </script>
 
 <style>

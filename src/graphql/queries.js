@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 export const MOVIES_QUERY = gql`
   query Movies($query: String!) {

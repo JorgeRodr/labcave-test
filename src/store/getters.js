@@ -1,11 +1,11 @@
 export const getters = {
-  movies: function(state) {
+  movies(state) {
     return state.movies;
   },
-  error: function(state) {
+  error(state) {
     return state.error;
   },
-  loading: function(state) {
+  loading(state) {
     return state.loading;
-  }
+  },
 };

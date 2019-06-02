@@ -29,24 +29,25 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import MovieCard from "../components/MovieCard";
-import Header from "../components/Header";
+import { mapActions, mapGetters } from 'vuex';
+import MovieCard from '../components/MovieCard.vue';
+import Header from '../components/Header.vue';
+
 export default {
-  name: "MovieList",
+  name: 'MovieList',
   components: {
     MovieCard,
-    Header
+    Header,
   },
   computed: {
-    ...mapGetters(["movies", "error", "loading"])
+    ...mapGetters(['movies', 'error', 'loading']),
   },
   methods: {
-    ...mapActions(["fetchMovies"]),
-    search: function(e) {
+    ...mapActions(['fetchMovies']),
+    search(e) {
       this.fetchMovies(e);
-    }
-  }
+    },
+  },
 };
 </script>
 

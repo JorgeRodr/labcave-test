@@ -21,15 +21,15 @@
 
 <script>
 export default {
-  name: "MovieModal",
+  name: 'MovieModal',
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
   },
   props: {
-    msg: String
-  }
+    msg: String,
+  },
 };
 </script>
 

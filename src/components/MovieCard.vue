@@ -16,21 +16,22 @@
 </template>
 
 <script>
-import MovieModal from "./MovieModal";
-import { CONSTANTS } from "../constants.js";
+import MovieModal from './MovieModal';
+import { CONSTANTS } from '../constants.js';
+
 export default {
-  name: "MovieCard",
+  name: 'MovieCard',
   components: {
-    MovieModal
+    MovieModal,
   },
   data() {
     return {
-      url: CONSTANTS.IMG_BASE_URL
+      url: CONSTANTS.IMG_BASE_URL,
     };
   },
   props: {
-    movie: Object
-  }
+    movie: Object,
+  },
 };
 </script>
 
