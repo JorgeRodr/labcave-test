@@ -52,6 +52,13 @@ export default {
 
   &__image-error {
     height: 100%;
+    position: absolute;
+    top: 45%;
+    margin-left: 10px;
   }
+}
+
+.v-card {
+  height: 100%;
 }
 </style>

@@ -9,7 +9,9 @@
           </div>
         </template>
         <template v-for="movie in movies">
-          <MovieCard :movie="movie" v-bind:key="movie.id"/>
+          <div class="list__card" v-bind:key="movie.id">
+            <MovieCard :movie="movie"/>
+          </div>
         </template>
         <template v-if="error">
           <div class="list__error">
@@ -50,10 +52,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import "../assets/sass/_utils.scss";
+
 .list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1260px) {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "h h h h"
@@ -62,6 +66,17 @@ export default {
       ". l l ."
       ". . . .";
   }
+
+  @media screen and (min-width: 1024px) and (max-width: 1260px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "h h h"
+      "w w w"
+      "e e e"
+      "l l l"
+      ". . .";
+  }
+
   @media screen and (min-width: 650px) and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
@@ -94,6 +109,10 @@ export default {
 
   &__loader {
     grid-area: l;
+  }
+
+  &__card {
+    @include fade_animation;
   }
 }
 </style>
