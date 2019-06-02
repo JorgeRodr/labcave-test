@@ -1,12 +1,11 @@
 import { ApolloClient } from "apollo-client";
-import { HttpLink } from "apollo-link-http";
+import { createHttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { CONSTANTS } from "../constants";
 import VueApollo from "vue-apollo";
+import fetch from "unfetch";
 
-const httpLink = new HttpLink({
-  uri: CONSTANTS.API_URL
-});
+const httpLink = createHttpLink({ uri: CONSTANTS.API_URL, fetch: fetch });
 
 export const apolloClient = new ApolloClient({
   link: httpLink,
