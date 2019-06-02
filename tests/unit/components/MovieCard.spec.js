@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import MovieCard from "../../src/components/MovieCard.vue";
+import MovieCard from "../../../src/components/MovieCard.vue";
 import Vuetify from "vuetify";
 import Vue from "vue";
 

@@ -1,5 +1,5 @@
 import { mount } from "@vue/test-utils";
-import MovieModal from "../../src/components/MovieModal.vue";
+import MovieModal from "../../../src/components/MovieModal.vue";
 import Vuetify from "vuetify";
 import Vue from "vue";
 
